@@ -12,14 +12,15 @@
 <body>
 
   <div id="app">
-    <ul>
-      <li        
-        v-for="email in emailArray">    
+      <!-- Mostra questa lista solo se la variabile allEmail è true -->
+    <ul v-if="allEmail === true">
+      <!-- Itera attraverso l'array emailArray e crea un elemento <li> per ogni email -->
+      <li v-for="email in emailArray">    
           {{ email }}
       </li>
     </ul>
-
-
+    <!-- Se la condizione nel tag <ul> non è soddisfatta, mostra questo paragrafo -->
+    <p v-else>Caricamento eMail in corso...</p>
 
   </div>
 
